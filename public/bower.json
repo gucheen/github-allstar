@@ -1,0 +1,26 @@
+{
+  "name": "github-allstar",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gucheen/github-allstar",
+  "authors": [
+    "gucheen <guchengf@gmail.com>"
+  ],
+  "description": "import other users' repositories",
+  "keywords": [
+    "github",
+    "starring"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "modernizr": "~2.8.1"
+  }
+}
