@@ -7,18 +7,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="stylesheets/main.css">
-    <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
 
 </head>
 
@@ -30,36 +21,52 @@
 
     <div class="container">
         <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="#">Home</a>
+            <ul class="nav nav-pills nav-tabs pull-right">
+                <li class="active"><a href="#home" data-toggle="tab">Home</a>
                 </li>
                 <li><a href="https://github.com/login/oauth/authorize?client_id=d509176927799f586466&scope=repo">Auth</a>
                 </li>
-                <li><a href="#">About</a>
+                <li><a href="#about" data-toggle="tab">About</a>
                 </li>
             </ul>
             <h3 class="text-muted">All-Star</h3>
         </div>
 
-        <div class="col-md-12">
-            <h3>任务状态</h3>
-            <form id="input-user" class="form-inline">
-                <input id="tar-user" type="text" class="form-control" placeholder="输入目标用户名">
-            </form>
-            <div class="progress progress-striped active">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0">
-                    <span class="sr-only"></span>
+        <div class="tab-content">
+            <div class="col-md-12 tab-pane active" id="home">
+                <div class="col-md-12">
+                    <h3>任务状态</h3>
+                    <form id="input-user" class="form-inline">
+                        <input id="tar-user" type="text" class="form-control" placeholder="输入目标用户名">
+                    </form>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                            <span class="sr-only"></span>
+                        </div>
+                    </div>
+                    <button id="get-repo-list" class="btn btn-primary">Get Repo</button>
+                    <button id="run" class="btn btn-lg btn-info">Run <span class="glyphicon glyphicon-play"></span></button>
+                </div>
+
+                <div class="col-md-12">
+                    <h3>Repositories list</h3>
+                    <ul id="repo-list" class="list-unstyled">
+
+                    </ul>
+                </div>
+
+                <div class="col-md-12">
+                    <h4>使用帮助</h3>
+                    <p>1. 点击 "Auth" 授权</p>
+                    <p>2. 输入要导入对象的用户名，点击 "Get Repo" ，取得 Repository 列表</p>
+                    <p>3. 默认所有 Repo 被选中，看情况取消选中，就可以排除该 Repo</p>
+                    <p>4. 点击 "Run" ，开始导入，其实就是一个一个 Star ，成功的会变成绿色，失败的变成红色。</p>
+                    <p>没有做已 star 校验，以后可能会加</p>
                 </div>
             </div>
-            <button id="get-repo-list" class="btn btn-primary">Get Repo</button>
-            <button id="run" class="btn btn-lg btn-info">Run <span class="glyphicon glyphicon-play"></span></button>
-        </div>
-
-        <div class="col-md-12">
-            <h3>Repositories list</h3>
-            <ul id="repo-list" class="list-unstyled">
-
-            </ul>
+            <div class="col-md-12 tab-pane" id="about">
+                <p>这是一个用来导入其他用户star列表的工具。</p>
+            </div>
         </div>
 
         <div class="footer col-md-12">
@@ -68,20 +75,10 @@
 
     </div>
 
-
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js scripts/plugins.js -->
     <script src="bower_components/bootstrap/js/tab.js"></script>
-    <!-- endbuild -->
     <script src="javascripts/lib.js"></script>
-    <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="javascripts/main.js"></script>
-    <!-- endbuild -->
 </body>
 
 </html>
