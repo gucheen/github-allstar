@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     var access_token = req.body.accessToken;
     var repo = req.body.repo;
-    if (access_toekn && repo) {
+    if (access_token && repo) {
         unirest.put('https://api.github.com/user/starred/' + repo + '?access_token=' + access_token)
             .header({
                 'Accept': 'application/json',
